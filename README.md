@@ -6,8 +6,9 @@
 ### Как установить
 
 Пользователю нужно для начала получить уникальный токен. 
-Для этого нужно зарегистрироваться на сайте Bitly и следовать инструкции [Токены](https://support.bitly.com/hc/en-us/articles/230647907-How-do-I-generate-an-OAuth-access-token-for-the-Bitly-API-)
-Токен нужно сохранить в файл .env в следующем виде:
+Для этого нужно зарегистрироваться на сайте Bitly и следовать инструкции [Генерация токена](https://support.bitly.com/hc/en-us/articles/230647907-How-do-I-generate-an-OAuth-access-token-for-the-Bitly-API-).
+
+Токен нужно сохранить в файл окружения .env в следующем виде:
 
 BITLY_TOKEN='токен пользователя'
 
