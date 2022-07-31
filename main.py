@@ -4,6 +4,7 @@ from urllib.parse import urlparse
 from dotenv import load_dotenv
 import argparse
 import sys
+from pathlib import Path
 
 
 def shorten_link(authorization_data, url):
@@ -37,13 +38,14 @@ def is_bitlink(url, authorization_data):
 def main():
     load_dotenv()
     parser = argparse.ArgumentParser()
-    parser.add_argument('url',nargs='?',default='http://www.reddit.com')
-    bitly_token = os.environ['BITLY_TOKEN']
+    parser.add_argument('url', nargs='?', default='http://www.reddit.com')
+    bitly_token = os.getenv('BITLY_TOKEN')
     authorization_data = {"Authorization": bitly_token}
     user_url = parser.parse_args().url
     try:
         if is_bitlink(user_url, authorization_data):
-            print('Число переходов по ссылке:', count_cliks(authorization_data, user_url))
+            print('Число переходов по ссылке:', 
+                  count_cliks(authorization_data, user_url))
         else:
             print('Битлинк', shorten_link(authorization_data, user_url))
     except(requests.exceptions.HTTPError):
@@ -52,3 +54,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
