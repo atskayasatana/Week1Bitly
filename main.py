@@ -38,10 +38,9 @@ def main():
     load_dotenv()
     parser = argparse.ArgumentParser()
     parser.add_argument('url',nargs='?',default='http://www.reddit.com')
-    namespace=parser.parse_args(sys.argv[1:])
     bitly_token = os.environ['BITLY_TOKEN']
     headers = {"Authorization": bitly_token}
-    user_url = namespace.url
+    user_url = parser.parse_args().url
     try:
         if is_bitlink(user_url, headers):
             print('Число переходов по ссылке:', count_cliks(headers, user_url))
