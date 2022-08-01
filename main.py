@@ -21,7 +21,7 @@ def count_cliks(token, url):
     api_url = f'https://api-ssl.bitly.com/v4/bitlinks/{link}/clicks/summary'
     response = requests.get(api_url, headers=token)
     response.raise_for_status()
-    clicks= response.json()
+    clicks = response.json()
     return clicks['total_clicks']
 
 
