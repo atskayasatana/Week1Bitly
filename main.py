@@ -38,7 +38,7 @@ def is_bitlink(url, authorization_data):
 def main():
     load_dotenv()
     parser = argparse.ArgumentParser()
-    parser.add_argument('url', nargs='?', default='http://www.reddit.com')
+    parser.add_argument('url', nargs='?')
     bitly_token = os.getenv('BITLY_TOKEN')
     authorization_data = {"Authorization": bitly_token}
     user_url = parser.parse_args().url
