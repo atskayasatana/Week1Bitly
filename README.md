@@ -36,10 +36,6 @@ python main.py адрес страницы
 ![пример](https://github.com/atskayasatana/Images/blob/c52dd9a9ad24b724ce45a5d35f2c9e6f1849d45b/lentabitlink.png)
 
 
-Если адрес страницы останется пустым, то по умолчанию будет создан битлинк для сайта www.reddit.com
-
-![reddit](https://github.com/atskayasatana/Images/blob/c52dd9a9ad24b724ce45a5d35f2c9e6f1849d45b/empty.png)
-
 Если страница не найдена, то появится сообщение об ошибке 'Ошибка в адресе страницы'
 
 ![error](https://github.com/atskayasatana/Images/blob/c52dd9a9ad24b724ce45a5d35f2c9e6f1849d45b/%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%20%D0%B2%20%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B5.png)
