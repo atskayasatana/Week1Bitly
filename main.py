@@ -5,31 +5,31 @@ from dotenv import load_dotenv
 import argparse
 
 
-def shorten_link(token, url):
+def shorten_link(headers, url):
     api_url = "https://api-ssl.bitly.com/v4/shorten"
     payload = {"long_url": url}
     response = requests.post(api_url, json=payload,
-                             headers=token)
+                             headers=headers)
     response.raise_for_status()
     bitlink = response.json()
     return bitlink['link']
 
 
-def count_cliks(token, url):
+def count_cliks(headers, url):
     parsed_url = urlparse(url)
     link = f'{parsed_url.netloc}{parsed_url.path}'
     api_url = f'https://api-ssl.bitly.com/v4/bitlinks/{link}/clicks/summary'
-    response = requests.get(api_url, headers=token)
+    response = requests.get(api_url, headers=headers)
     response.raise_for_status()
     clicks = response.json()
     return clicks['total_clicks']
 
 
-def is_bitlink(url, token):
+def is_bitlink(url, headers):
     parsed_url = urlparse(url)
     link = f'{parsed_url.netloc}{parsed_url.path}'
     api_url = f'https://api-ssl.bitly.com/v4/bitlinks/{link}'
-    response = requests.get(api_url, headers=token)
+    response = requests.get(api_url, headers=headers)
     return response.ok
 
 
