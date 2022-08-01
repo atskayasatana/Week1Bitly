@@ -3,8 +3,6 @@ import requests
 from urllib.parse import urlparse
 from dotenv import load_dotenv
 import argparse
-import sys
-from pathlib import Path
 
 
 def shorten_link(token, url):
